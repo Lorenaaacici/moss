@@ -14,13 +14,14 @@ header {
     min-width: 1440px;
     height: 600px; 
     background-image: url('../images/homebg.jpg'); 
-    background-size: contain; 
+    background-size: cover; 
     background-position: center;
     background-repeat: no-repeat; 
-    background-color: #e81a1a;
+    background-color: #0a0a0a;
     padding: 0;
     padding-top: 0; 
     position: relative; 
+    margin-bottom: 0px;
 }
 
 @media (max-width: 1440px) {
@@ -31,8 +32,8 @@ header {
 
 .header-logo {
     position: absolute; /* 绝对定位 */
-    top: 30px; /* 调整top值，使Logo与搜索栏垂直高度大致相同 */
-    left: 30px; /* 左侧间隔，根据需要调整 */
+    top: 117px; /* 调整top值，使Logo与搜索栏垂直高度大致相同 */
+    left: 15px; /* 左侧间隔，根据需要调整 */
     height: 80px; /* Logo大小，根据需要调整 */
     width: auto; /* 保持图像的宽高比 */
 }
@@ -58,6 +59,7 @@ nav ul li a {
     text-decoration: none;
     color: #F0E4BF;
     padding: 10px 20px;
+    font-weight: bold;
     font-size: 22px; /* Larger font size for better readability */
     font-family: Arial, Helvetica, sans-serif; /* Fallbacks included */
 }
@@ -102,6 +104,7 @@ main {
     background-size: cover;
     display: flex;
     flex-direction: column;
+    margin-top: 0;
     justify-content: center; /* Centers content vertically */
     height: 100vh; /* Use the full height of the viewport */
 }
@@ -119,11 +122,13 @@ main {
     flex: 1;
     border: none;
     height: 1.5px;
+    margin-top: 5%;
     background-color: #F0E4BF;
     margin: 0 10px; /* Space between the text and lines */
 }
 
 .top-movies h1 {
+    margin-top: 10px;
     padding: 0 10px;
     color: #D3CAA8;
     font-size: 24px;
@@ -152,8 +157,16 @@ main {
     border-radius: 5px;
 }
 
+.movie .movie-title {
+    font-size: 30px; /* 设置字体大小为 22px */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
 .movie p:last-child {
-    font-size: 0.8em;
+    font-size: 30px;
+    text-align: center; 
+    
 }
 
 /* Footer Styles */

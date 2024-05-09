@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOSS Movie Booking</title>
+    <link rel="stylesheet" href="css/stylebook.css">
+</head>
+<body>
+    <header style="width: 1440px; height: 287px; background-image: url('images/book_bg.avif'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div style="position: absolute; top: 5px; left: 5px; display: flex; flex-direction: column; align-items: flex-start;">
+            <div class="logo">
+                <img src="images/website logo text.png" alt="MOSS Logo">
+            </div>
+            <div class="search-area">
+                <input type="text" placeholder="Search Movies" style="width: 280px;">
+                <select name="state" id="state-select" style="width: 280px; margin-top: 5px;">
+                    <option value="">Select a State</option>
+                    <option value="victoria">Victoria</option>
+                    <option value="nsw">New South Wales</option>
+                    <option value="queensland">Queensland</option>
+                </select>
+                <select name="city" id="city-select" style="width: 280px; margin-top: 5px;">
+                    <option value="">Select a City</option>
+                </select>
+            </div>
+        </div>
+        <h2 class="page-title" style="font-size: 32px; line-height: 1.5; text-align: center; position: absolute; top: 50%; right: 20px; transform: translateY(-50%);">Book<br>now</h2>
+    </header>
+
+    <div class="filters" style="background-color: white; padding: 10px 20px;">
+        <img src="filter-icon.png" alt="Filter Icon" style="vertical-align: middle;">
+        <span>Filter</span>
+        <button class="filter">CC</button>
+        <button class="filter">SUB</button>
+        <button class="filter">3D</button>
+    </div>
+
+    <main>
+        <div class="content" style="display: flex; align-items: flex-end; justify-content: space-between;">
+            <div class="movie-poster">
+                <img src="images/Kong Fu panda.webp" alt="Kung Fu Panda 4" style="width: 412px; height: 541px;">
+                <p>Kung Fu Panda 4</p>
+            </div>
+            <div class="movie-schedule" style="flex: 1; overflow-y: auto; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; margin-left: 20px;">
+                <div class="date-selector">
+                    <button>Today 05/09 Thu</button>
+                    <button>Tomorrow 05/10 Fri</button>
+                    <button>05/11 Sat</button>
+                    <button class="next-date">></button>
+                </div>
+                <div class="cinema-schedule">
+                    <h3>Cineplex Cinema</h3>
+                    <p>Location: 167 Grey St, South Brisbane QLD 4101</p>
+                    <ul>
+                        <li>11:00 AM - $15</li>
+                        <li>12:30 PM - $15</li>
+                        <li>2:30 PM - $15</li>
+                    </ul>
+                    <button type="button">Book Tickets</button>
+                </div>
+                <div class="cinema-schedule">
+                    <h3>Event Cinemas Indooroopilly</h3>
+                    <p>Location: Indooroopilly Shopping Centre, 2/322 Moggill Rd, QLD 4068</p>
+                    <ul>
+                        <li>10:00 AM - $15</li>
+                        <li>12:30 PM - $15</li>
+                        <li>3:30 PM - $15</li>
+                    </ul>
+                    <button type="button">Book Tickets</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/book.js"></script>
+</body>
+</html>

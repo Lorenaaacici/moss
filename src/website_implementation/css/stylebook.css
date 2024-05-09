@@ -1,0 +1,235 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #000;
+    background-image: url('../images/book\ bg.avif'); /* Path to your image */
+    background-size: cover;; /* Cover ensures the image covers the entire header */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1440px; /* Set the header width */
+    height: 287px; /* Set the header height */
+    position: relative;
+}
+
+
+.logo {
+    align-self: flex-start; /* Align logo to the left */
+    position: relative; /* Adjust based on layout needs */
+    top: 5px; /* Adjusted for visual balance */
+    left: 5px; /* Align left */
+    padding-left: 20px; /* Padding to maintain some spacing from the edge */
+    padding-bottom: 10px; /* Space between logo and search area */
+}
+
+.logo img {
+    top: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    left: 0;
+    height: auto;
+    width: 200px; /* Adjust the logo size accordingly */
+    display: block; /* Ensure the logo image does not have extra space around it */
+}
+
+.search-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;;
+    width: 300px;
+    width: 100%; 
+    position: relative;
+    margin-left: auto; /* Push search area to the right */
+    margin-right: 20px;
+    padding-left: 5px; /* Alignment padding */
+}
+
+.search-area input[type="text"] {
+    padding: 8px;
+    width: 280px;
+    margin-top: 5px;
+}
+
+.search-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* Adjusted to not fill the entire width */
+}
+
+.search-area select {
+    width: 280px;
+    padding: 8px;
+    margin-top: 5px;
+    background: #fff; /* Ensure visibility against dark background */
+    color: #000; /* Text color */
+    border: 1px solid #ccc; /* Subtle border for inputs */
+}
+
+.search-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    width: 280px;
+    text-align: center;
+    font-weight: bold;
+    margin: 5px 0;
+    align-self: start; /* Align button to the start (left) */
+    margin-top: 5px; /* Space between select and button */
+    right: 0; /* Position inside the search bar */
+}
+
+.logo h1 {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.page-title {
+    position: absolute;
+    right: 20px; /* Positioned to the right half of the header */
+    top: 50%; /* Centered vertically */
+    transform: translateY(-50%); /* Precise vertical centering */
+    font-size: 32px; /* Larger font size */
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: right;
+    transform: translateY(-50%);
+    color: white;
+    display: flex;
+    flex-direction: column; /* Ensures "Book" and "now" are on separate lines */
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    justify-content: flex-start; /* Align filters to the left */
+}
+
+.filters img, .filters span {
+    margin-right: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.filter {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.filter {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+    position: relative;
+}
+
+.movie-poster {
+    position: sticky;
+    top: 20px;
+    width: 412px; /* Adjusted width */
+    height: 541px; /* Adjusted height */
+    margin-right: 20px; /* Space between poster and schedule */
+    flex-shrink: 0; /* Prevent resizing */
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the poster area */
+}
+
+.movie-poster p {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.movie-schedule {
+    flex: 1;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.date-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-selector button,
+.date-selector .next-date {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.next-date {
+    font-size: 20px;
+    color: #444; /* Styling for the arrow icon */
+}
+
+.cinema-schedule h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.cinema-schedule p {
+    font-size: 16px;
+    color: #666;
+}
+
+.cinema-schedule ul {
+    list-style: none;
+    padding: 15px 0;
+}
+
+.cinema-schedule ul li {
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+.cinema-schedule button {
+    background-color: #008000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
