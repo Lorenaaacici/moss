@@ -6,14 +6,19 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f4f4f4;
+body, html {
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling on the body */
+}
+
+.container {
+    display: flex;
 }
 
 header {
     background-color: #000;
-    background-image: url('../images/book\ bg.avif'); /* Path to your image */
-    background-size: cover;; /* Cover ensures the image covers the entire header */
+    background-image: url('../media/book\ bg.avif'); /* Path to your image */
+    background-size: contain; /* Cover ensures the image covers the entire header */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     color: white;
@@ -22,18 +27,18 @@ header {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    width: 1440px; /* Set the header width */
-    height: 287px; /* Set the header height */
-    position: relative;
+    width: 100%; /* Set the header width */
+    height: 50vh; /* Set the header height */
+    position: fixed; /* Change from relative to fixed */
+    top: 0; /* Add this line */
+    left: 0; /* Add this line */
+    box-sizing: border-box;
 }
-
 
 .logo {
     align-self: flex-start; /* Align logo to the left */
     position: relative; /* Adjust based on layout needs */
     top: 5px; /* Adjusted for visual balance */
-    left: 5px; /* Align left */
-    padding-left: 20px; /* Padding to maintain some spacing from the edge */
     padding-bottom: 10px; /* Space between logo and search area */
 }
 
@@ -43,14 +48,14 @@ header {
     margin-bottom: 10px;
     left: 0;
     height: auto;
-    width: 200px; /* Adjust the logo size accordingly */
+    width: 230px; /* Adjust the logo size accordingly */
     display: block; /* Ensure the logo image does not have extra space around it */
 }
 
 .search-area {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;;
+    align-items: flex-start;
     width: 300px;
     width: 100%; 
     position: relative;
@@ -63,27 +68,51 @@ header {
     padding: 8px;
     width: 280px;
     margin-top: 5px;
+    flex-grow: 1;
+    margin-right: 10px;
+    padding-right: 50px;
+    width: 100%; /* Take up full width of .search-area */
 }
 
 .search-area {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    align-items: center;
-    width: 300px; /* Adjusted to not fill the entire width */
+    align-items: flex-start;
+    width: 300px;
+    position: relative;
+    padding-left: 5px;
 }
 
 .search-area select {
     width: 280px;
     padding: 8px;
-    margin-top: 5px;
+    margin-top: 15px;
     background: #fff; /* Ensure visibility against dark background */
     color: #000; /* Text color */
     border: 1px solid #ccc; /* Subtle border for inputs */
+    position: relative;
+}
+
+.search-area button {
+    position: absolute; /* Set to absolute positioning */
+    right: 10px; /* Position on the right */
+    top: 0; /* Position at the top */
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-area button i {
+    font-size: 20px;
+    color: #000;
 }
 
 .search-button {
     background-color: transparent;
-    color: white;
+    color: rgb(25, 24, 24);
     border: none;
     padding: 8px;
     cursor: pointer;
@@ -92,7 +121,7 @@ header {
     font-weight: bold;
     margin: 5px 0;
     align-self: start; /* Align button to the start (left) */
-    margin-top: 5px; /* Space between select and button */
+    margin-top: 15px; /* Space between select and button */
     right: 0; /* Position inside the search bar */
 }
 
@@ -124,27 +153,56 @@ header {
     justify-content: flex-start; /* Align filters to the left */
 }
 
-.filters img, .filters span {
-    margin-right: 10px;
-    color: rgb(0, 0, 0);
+.fas.fa-filter {
+    color: #000; /* Change icon color */
+    font-size: 20px; /* Change icon size */
 }
 
 .filter {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 5px;
-    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50px; /* Adjust based on your image size */
+    height: 50px; /* Adjust based on your image size */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-.filter {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 5px;
-    cursor: pointer;
+.filter-cc {
+    background-image: url('../media/cc\ icon.png');
+    background-size: cover;
+}
+
+.filter-sub {
+    background-image: url('../media/sub.png');
+    background-size: cover;
+}
+
+.filter-3d {
+    background-image: url('../media/3D\ icon.png');
+    background-size: cover;
+}
+
+.filter-vm {
+    background-image: url('../media/VM\ icon.png');
+    background-size: cover;
+}
+
+.filter-ad {
+    background-image: url('../media/AD\ icon.png');
+    background-size: cover;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px; /* Adjust based on your needs */
+}
+
+.filter-description {
+    margin-top: 5px; /* Adjust based on your needs */
+    text-align: center;
+    font-size: 14px; /* Adjust based on your needs */
 }
 
 main {
@@ -155,11 +213,16 @@ main {
 
 .movie-poster {
     position: sticky;
-    top: 20px;
+    top: 50vh;
     width: 412px; /* Adjusted width */
     height: 541px; /* Adjusted height */
     margin-right: 20px; /* Space between poster and schedule */
     flex-shrink: 0; /* Prevent resizing */
+    position: fixed;
+    top: /* The height of your header */;
+    left: 0;
+    width: 100%;
+    
 }
 
 .movie-poster img {
@@ -170,18 +233,46 @@ main {
 
 .movie-poster p {
     text-align: center;
-    font-size: 16px;
-    color: #666;
+    font-size: 20px;
+    color: #000000;
     margin-top: 10px;
+    font-weight: bold;
+    position: fixed;
+    top: /* The height of your header */;
+    left: 0;
+    width: 100%;
+}
+
+.movie-poster, .movie-poster p {
+    position: sticky;
+    top: 50vh;
+    left: 0;
+    width: 100%;
 }
 
 .movie-schedule {
+    display: grid; /* Enable grid layout */
+    grid-template-columns: 1fr; /* One column */
+    grid-template-rows: auto auto; /* Two rows, first for date-selector, second for the schedules */
+    gap: 20px; /* Space between grid items */
     flex: 1;
     overflow-y: auto;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 20px;
     margin-left: 20px;
+}
+
+header, .movie-poster {
+    position: fixed;
+    width: 100%;
+    z-index: 1; /* Ensure these elements are on top */
+}
+.schedule {
+    overflow-y: auto; /* Add this line */
+    padding-top: 0; /* Change from the total height of your fixed elements to 0 */
+    position: relative;
+    z-index: 0;
 }
 
 .date-selector {
@@ -208,6 +299,12 @@ main {
     margin-top: 10px;
 }
 
+.cinema-schedule-wrapper {
+    display: grid; /* Ensure this is also a grid to hold schedules */
+    grid-template-rows: 1fr 1fr; /* Two rows for each schedule */
+    gap: 10px;
+}
+
 .cinema-schedule p {
     font-size: 16px;
     color: #666;
@@ -219,8 +316,8 @@ main {
 }
 
 .cinema-schedule ul li {
-    padding: 8px 0;
-    font-size: 16px;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
 }
 
 .cinema-schedule button {
@@ -232,4 +329,5 @@ main {
     display: block;
     width: 100%;
     margin-top: 10px;
+    border-radius: 5px;
 }

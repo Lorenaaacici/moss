@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOSS Movie Booking</title>
     <link rel="stylesheet" href="css/stylebook.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <header style="width: 1440px; height: 287px; background-image: url('images/book_bg.avif'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <header style="width: 1440px; height: 287px; background-image: url('media/book\ bg.avif'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div style="position: absolute; top: 5px; left: 5px; display: flex; flex-direction: column; align-items: flex-start;">
             <div class="logo">
-                <img src="images/website logo text.png" alt="MOSS Logo">
+                <img src="media/website logo text.png" alt="MOSS Logo">
             </div>
             <div class="search-area">
                 <input type="text" placeholder="Search Movies" style="width: 280px;">
-                <select name="state" id="state-select" style="width: 280px; margin-top: 5px;">
+                <button type="submit" style="width: 40px;"><i class="fas fa-search"></i></button>
+                <select name="state" id="state-select" style="width: 280px; margin-top: 5px;" onchange="showCities(this.value)">
                     <option value="">Select a State</option>
                     <option value="victoria">Victoria</option>
                     <option value="nsw">New South Wales</option>
@@ -29,20 +31,37 @@
     </header>
 
     <div class="filters" style="background-color: white; padding: 10px 20px;">
-        <img src="filter-icon.png" alt="Filter Icon" style="vertical-align: middle;">
+        <i class="fas fa-filter" aria-label="Filter"></i>
         <span>Filter</span>
-        <button class="filter">CC</button>
-        <button class="filter">SUB</button>
-        <button class="filter">3D</button>
+        <div class="filter-container">
+            <button class="filter filter-cc"></button>
+            <span class="filter-description">CC</span>
+        </div>
+        <div class="filter-container">
+            <button class="filter filter-sub"></button>
+            <span class="filter-description">SUB</span>
+        </div>
+        <div class="filter-container">
+            <button class="filter filter-3d"></button>
+            <span class="filter-description">3D</span>
+        </div>
+        <div class="filter-container">
+            <button class="filter filter-vm"></button>
+            <span class="filter-description">V-Max</span>
+        </div>
+        <div class="filter-container">
+            <button class="filter filter-ad"></button>
+            <span class="filter-description">AD</span>
+        </div>
     </div>
 
     <main>
         <div class="content" style="display: flex; align-items: flex-end; justify-content: space-between;">
             <div class="movie-poster">
-                <img src="images/Kong Fu panda.webp" alt="Kung Fu Panda 4" style="width: 412px; height: 541px;">
+                <img src="media/Kong Fu panda.webp" alt="Kung Fu Panda 4" style="width: 412px; height: 541px;">
                 <p>Kung Fu Panda 4</p>
             </div>
-            <div class="movie-schedule" style="flex: 1; overflow-y: auto; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 20px; margin-left: 20px;">
+            <div class="movie-schedule">
                 <div class="date-selector">
                     <button>Today 05/09 Thu</button>
                     <button>Tomorrow 05/10 Fri</button>
@@ -63,13 +82,33 @@
                     <h3>Event Cinemas Indooroopilly</h3>
                     <p>Location: Indooroopilly Shopping Centre, 2/322 Moggill Rd, QLD 4068</p>
                     <ul>
-                        <li>10:00 AM - $15</li>
-                        <li>12:30 PM - $15</li>
-                        <li>3:30 PM - $15</li>
+                        <li>10:00 AM - $16</li>
+                        <li>12:30 PM - $16</li>
+                        <li>3:30 PM - $16</li>
                     </ul>
                     <button type="button">Book Tickets</button>
                 </div>
-            </div>
+                <div class="cinema-schedule">
+                    <h3>Palace Barracks Cinema</h3>
+                    <p>Location: 61 Petrie Terrace, Brisbane QLD 4000</p>
+                    <ul>
+                        <li>9:00 AM - $14</li>
+                        <li>11:45 AM - $14</li>
+                        <li>2:00 PM - $14</li>
+                    </ul>
+                    <button type="button">Book Tickets</button>
+                </div>
+                <div class="cinema-schedule">
+                    <h3>Blue Room Cinebar</h3>
+                    <p>Location: 151 Baroona Rd, Paddington QLD 4064</p>
+                    <ul>
+                        <li>10:00 AM - $17</li>
+                        <li>1:00 PM - $17</li>
+                        <li>4:00 PM - $17</li>
+                    </ul>
+                    <button type="button">Book Tickets</button>
+                </div>
+            </div>       
         </div>
     </main>
     <script src="js/book.js"></script>
