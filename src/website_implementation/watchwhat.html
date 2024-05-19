@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watch What? - MOSS Movies</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/watchwhat.css">
 </head>
 <body>
     <header>
+        <img src="media/website logo text.png" alt="MOSS Logo" class="header-logo">
         <nav>
             <ul>
-                <li><a href="home.html">HOME</a></li>
+                <li><a href="index1.html">HOME</a></li>
                 <li><a href="watchwhat.html" class="active">WATCH WHAT?</a></li>
                 <li><a href="community.html">COMMUNITY</a></li>
                 <li><a href="support.html">SUPPORT</a></li>
@@ -18,25 +19,39 @@
             </ul>
         </nav>
     </header>
-    <div class="column-nav">
-        <ul>
-            <li><a href="#now-showing">Now<br>Showing</a></li>
-            <li><a href="#coming-soon">Coming<br>Soon</a></li>
-            <li><a href="#featured">Featured</a></li>
-            <li><a href="#personalised">Personalised</a></li>
-        </ul>
-    </div>    
+     
     <main>
+        <div class="column-nav">
+            <ul>
+                <li><a href="#now-showing">Now<br>Showing</a></li>
+                <li><a href="#coming-soon">Coming<br>Soon</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#personalised">Personalised</a></li>
+            </ul>
+        </div>   
         <section id="now-showing">
             <div class="title-with-lines">
                 <hr class="line">
                 <h2>Now Showing</h2>
                 <hr class="line">
             </div>
-            <video controls>
-                <source src="videos/trailer.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="content-grid">
+                <div class="poster">
+                    <img src="media/dune-2 poster.jpeg" alt="Dune: Part 2 Poster">
+                    <p>DUNE 2</p>
+                </div>
+                <div class="trailer">
+                    <h2>TRAILER</h2>
+                    <video controls>
+                        <source src="media/Dune_ Part Two _ trailer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="plot">
+                    <h2>PLOT</h2>
+                    <p>Explore the intricate dynamics of the universe with our upcoming movie, Dune Part 2. Dive deep into the saga that shapes the destiny of a world and its people.</p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>

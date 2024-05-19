@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle navigation link changes
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default navigation behavior
-
+        link.addEventListener('click', function(event) 
+        {
             // Reset all links to default color
             navLinks.forEach(lnk => {
                 lnk.classList.remove('active');

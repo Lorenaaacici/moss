@@ -4,35 +4,34 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    
 }
 
 body, html {
+    width: 100%;
     height: 100%;
     overflow: hidden; /* Prevents scrolling on the body */
-}
-
-.container {
-    display: flex;
 }
 
 header {
     background-color: #000;
     background-image: url('../media/book\ bg.avif'); /* Path to your image */
-    background-size: contain; /* Cover ensures the image covers the entire header */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Ensures the image covers the entire header area without being contained within its dimensions */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     color: white;
     padding: 20px;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row; /* Change from column to row for horizontal alignment of elements */
     justify-content: space-between;
-    width: 100%; /* Set the header width */
-    height: 50vh; /* Set the header height */
-    position: fixed; /* Change from relative to fixed */
-    top: 0; /* Add this line */
-    left: 0; /* Add this line */
-    box-sizing: border-box;
+    width: 100%; /* Full width */
+    height: 287px; /* Specific height for the header */
+    position: fixed; /* Keeps the header at the top of the viewport */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the header stays above all other content */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
 
 .logo {
@@ -132,15 +131,14 @@ header {
 
 .page-title {
     position: absolute;
-    right: 20px; /* Positioned to the right half of the header */
+    margin-right: 50px;
     top: 50%; /* Centered vertically */
     transform: translateY(-50%); /* Precise vertical centering */
-    font-size: 32px; /* Larger font size */
+    font-size: 60px; /* Larger font size */
     font-weight: bold;
     line-height: 1.5;
     text-align: right;
-    transform: translateY(-50%);
-    color: white;
+    color: #E2B323;
     display: flex;
     flex-direction: column; /* Ensures "Book" and "now" are on separate lines */
 }
@@ -149,8 +147,14 @@ header {
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ffffff;
+    background-color: #ffffff; /* White background for better visibility */
     justify-content: flex-start; /* Align filters to the left */
+    width: 100%; /* Ensures the filter bar spans the full width */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds subtle shadow for depth */
+    position: fixed; /* Fixed position to stay visible */
+    top: 287px; /* Position right below the header */
+    left: 0;
+    z-index: 100; /* High z-index to keep it above other content but below the header */
 }
 
 .fas.fa-filter {
@@ -161,11 +165,17 @@ header {
 .filter {
     margin-left: 20px;
     margin-right: 20px;
-    width: 50px; /* Adjust based on your image size */
-    height: 50px; /* Adjust based on your image size */
-    border: none; /* Remove default button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    width: 50px; /* Specific width for filter icons */
+    height: 50px; /* Specific height for filter icons */
+    border: none;
+    cursor: pointer;
+    display: inline-flex; /* Use inline-flex to align icon and text properly */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: transparent;
+    color: white; /* White text for visibility */
 }
+
 
 .filter-cc {
     background-image: url('../media/cc\ icon.png');
@@ -209,21 +219,19 @@ main {
     display: flex;
     padding: 20px;
     position: relative;
+    margin-top: 380px;
 }
 
-.movie-poster {
-    position: sticky;
-    top: 50vh;
-    width: 412px; /* Adjusted width */
-    height: 541px; /* Adjusted height */
-    margin-right: 20px; /* Space between poster and schedule */
-    flex-shrink: 0; /* Prevent resizing */
-    position: fixed;
-    top: /* The height of your header */;
-    left: 0;
-    width: 100%;
-    
+.content {
+    display: flex !important;
+    flex-grow: 1;  
+    overflow: hidden; 
+    flex-direction: row;
+    width: 100%;  /* Change from auto to 100% */
+    height: 100%; /* Add this line */ 
+    min-height: 0; 
 }
+
 
 .movie-poster img {
     width: 100%;
@@ -237,35 +245,27 @@ main {
     color: #000000;
     margin-top: 10px;
     font-weight: bold;
-    position: fixed;
-    top: /* The height of your header */;
-    left: 0;
-    width: 100%;
 }
 
 .movie-poster, .movie-poster p {
     position: sticky;
-    top: 50vh;
-    left: 0;
-    width: 100%;
+    top: -41vh;
+    left: 15px;
+    flex: 1;
+    margin-top: 0;
 }
+
 
 .movie-schedule {
-    display: grid; /* Enable grid layout */
-    grid-template-columns: 1fr; /* One column */
-    grid-template-rows: auto auto; /* Two rows, first for date-selector, second for the schedules */
-    gap: 20px; /* Space between grid items */
-    flex: 1;
-    overflow-y: auto;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-left: 20px;
+    flex-grow: 1; /* Take available space */
+    overflow-y: auto; /* Enable scrolling for schedule */
+    background-color: #fff; /* White background for visibility */
+    padding: 20px; /* Padding around the content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
-header, .movie-poster {
-    position: fixed;
-    width: 100%;
+.movie-poster {
+    position: relative;
     z-index: 1; /* Ensure these elements are on top */
 }
 .schedule {
@@ -273,6 +273,8 @@ header, .movie-poster {
     padding-top: 0; /* Change from the total height of your fixed elements to 0 */
     position: relative;
     z-index: 0;
+    top: 45vh;
+    flex: 2;
 }
 
 .date-selector {

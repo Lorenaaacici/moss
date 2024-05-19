@@ -2,15 +2,17 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('../media/watchwhat\ bg.png');
+    background-color: #1a1a1a;
     background-size: cover;
     background-position: center;
 }
 
 header {
     color: white;
+    background-image: url('../media/watchwhat\ bg.png');
+    background-position: center; /* 居中显示 */
+    background-size: cover;
     padding: 20px;
-    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,60 +20,112 @@ header {
     width: 1440px; 
 }
 
+.header-logo {
+    position: absolute; /* 绝对定位 */
+    top: 117px; /* 调整top值，使Logo与搜索栏垂直高度大致相同 */
+    left: 15px; /* 左侧间隔，根据需要调整 */
+    height: 80px; /* Logo大小，根据需要调整 */
+    width: auto; /* 保持图像的宽高比 */
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    right: 0;
+    
+}
+
 nav ul {
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
+    justify-content: space-between;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    padding: 10px;
+    color: #F0E4BF;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 22px; /* Larger font size for better readability */
+    font-family: Arial, Helvetica, sans-serif; /* Fallbacks included */
 }
 
 nav ul li a.active {
-    font-weight: bold;
+    color: #FCE293;
+}
+
+
+.main {
+    margin-left: 220px; /* 留出左侧导航栏的空间 */
+    padding: 20px;
+    margin-top: 10px;
+    display: flex; /* 修改为flex布局 */
 }
 
 .column-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
+    flex: 0 0 200px;
+    position: static; /* 修改为正常文档流 */
     width: 200px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(110, 108, 108, 0.5);
+}
+
+#now-showing {
+    flex-grow: 1; /* 这将使now-showing占用剩余的空间 */
 }
 
 .column-nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 100px; /* Adjust this to match the height of the header */
+    margin-top: 120px; /* Adjust this to match the height of the header */
 }
 
 .column-nav ul li a {
     display: block;
     padding: 10px;
-    color: white;
+    color: #FCE293;
     text-decoration: none;
-}
-
-.main {
-    margin-left: 200px;
-    padding: 20px;
 }
 
 .title-with-lines {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
+    color: #89A8BB;
+    font-family:PoetsenOne;
+    font-size: 24px;
 }
 
 .line {
     border: none;
-    height: 1px;
-    background-color: gold;
-    width: 30%; /* Adjust line width as needed */
+    height: 2px;
+    background-color: #89A8BB;
+    width: 40%; /* Adjust line width as needed */
     margin: 0 10px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 定义两列布局 */
+    grid-gap: 20px;
+}
+
+.poster img {
+    width: 100%;
+    height: auto;
+}
+
+.trailer video {
+    width: 100%;
+}
+
+.plot {
+    grid-column: span 2; /* 跨两列 */
 }
 
 footer {
