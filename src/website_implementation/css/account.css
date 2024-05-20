@@ -163,3 +163,36 @@ footer {
 .arrow {
     font-size: 1em;
 }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-logo {
+        margin: 10px 0;
+    }
+
+    nav {
+        position: static;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    nav ul li {
+        flex: 1;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 12px !important;
+    }
+}
