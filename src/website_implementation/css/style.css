@@ -50,10 +50,9 @@ nav ul {
 nav {
     position: absolute;
     width: 100%;
-    top: 60px;
+    top: 45px;
     left: 0;
-    right: 0;
-    
+    right: 0;  
 }
 
 nav ul li a {
@@ -168,6 +167,11 @@ main {
     font-size: 30px;
     text-align: center; 
     
+}
+
+.movie:hover {
+    background-color: #d2d0d0;
+    color: rgb(20, 17, 17);
 }
 
 /* Footer Styles */

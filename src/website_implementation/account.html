@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOSS Account - MOSS Movies</title>
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+    <header class="header-background">
+        <img src="media/website logo text.png" alt="MOSS Logo" class="header-logo">
+        <nav>
+            <ul>
+                <li><a href="index1.html">HOME</a></li>
+                <li><a href="watchwhat.html">WATCH WHAT?</a></li>
+                <li><a href="community.html">COMMUNITY</a></li>
+                <li><a href="support.html">SUPPORT</a></li>
+                <li><a href="account.html" class="active">MY ACCOUNT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-background">
+        <section class="account">
+            <div class="section-title">
+                <h1>My Account</h1>
+            </div>
+            <div class="account-grid">
+                <div class="account-feature">
+                    <h2>Sign in / Sign up</h2>
+                </div>
+                <div class="account-feature">
+                    <h2>Favorite watchlist</h2>
+                </div>
+                <div class="account-feature">
+                    <h2>My order</h2>
+                </div>
+                <div class="account-feature dropdown">
+                    <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-content">
+                        Language switch <span class="arrow">&#9660;</span>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="#" role="menuitem">English</a>
+                        <a href="#" role="menuitem">中文</a>
+                        <a href="#" role="menuitem">Español</a>
+                        <a href="#" role="menuitem">Français</a>
+                        <a href="#" role="menuitem">Deutsch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 MOSS - Movies One-stop Station</p>
+    </footer>
+
+    <script>
+        // Script to handle dropdown menu
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdownBtn = document.querySelector('.dropdown-btn');
+            var dropdownContent = document.querySelector('.dropdown-content');
+
+            dropdownBtn.addEventListener('click', function() {
+                var isExpanded = dropdownBtn.getAttribute('aria-expanded') === 'true';
+                dropdownBtn.setAttribute('aria-expanded', !isExpanded);
+                dropdownContent.classList.toggle('show');
+            });
+
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('.dropdown-btn')) {
+                    if (dropdownContent.classList.contains('show')) {
+                        dropdownContent.classList.remove('show');
+                        dropdownBtn.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
