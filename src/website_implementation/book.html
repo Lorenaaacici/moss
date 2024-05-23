@@ -14,15 +14,15 @@
                 <img src="media/website logo text.png" alt="MOSS Logo">
             </div>
             <div class="search-area">
-                <input type="text" placeholder="Search Movies" style="width: 280px;">
-                <button type="submit" style="width: 40px;"><i class="fas fa-search"></i></button>
-                <select name="state" id="state-select" style="width: 280px; margin-top: 5px;" onchange="showCities(this.value)">
+                <input type="text" aria-label="Search Movies" placeholder="Search Movies" style="width: 280px;">
+                <button type="submit" aria-label="Search" style="width: 40px;"><i class="fas fa-search"></i></button>
+                <select name="state" id="state-select" aria-label="Select a State" style="width: 280px; margin-top: 5px;" onchange="showCities(this.value)">
                     <option value="">Select a State</option>
                     <option value="victoria">Victoria</option>
                     <option value="nsw">New South Wales</option>
                     <option value="queensland">Queensland</option>
                 </select>
-                <select name="city" id="city-select" style="width: 280px; margin-top: 5px;">
+                <select name="city" id="city-select" aria-label="Select a City" style="width: 280px; margin-top: 5px;">
                     <option value="">Select a City</option>
                 </select>
             </div>
@@ -34,23 +34,23 @@
         <i class="fas fa-filter" aria-label="Filter"></i>
         <span>Filter</span>
         <div class="filter-container">
-            <button class="filter filter-cc"></button>
+            <button class="filter filter-cc" aria-label="Closed Captions"></button>
             <span class="filter-description">CC</span>
         </div>
         <div class="filter-container">
-            <button class="filter filter-sub"></button>
+            <button class="filter filter-sub" aria-label="Subtitle Filter"></button>
             <span class="filter-description">SUB</span>
         </div>
         <div class="filter-container">
-            <button class="filter filter-3d"></button>
+            <button class="filter filter-3d" aria-label="3D Filter"></button>
             <span class="filter-description">3D</span>
         </div>
         <div class="filter-container">
-            <button class="filter filter-vm"></button>
+            <button class="filter filter-vm" aria-label="V-Max Filter"></button>
             <span class="filter-description">V-Max</span>
         </div>
         <div class="filter-container">
-            <button class="filter filter-ad"></button>
+            <button class="filter filter-ad" aria-label="Audio Description Filter"></button>
             <span class="filter-description">AD</span>
         </div>
     </div>

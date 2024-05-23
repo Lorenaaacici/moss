@@ -5,6 +5,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -12,7 +13,6 @@ header {
     align-items: center; 
     justify-content: space-between;
     width: 100%;
-    min-width: 1440px;
     height: 600px; 
     background-image: url('../media/homebg.jpg'); 
     background-size: cover; 
@@ -20,16 +20,10 @@ header {
     background-repeat: no-repeat; 
     background-color: #0a0a0a;
     padding: 0;
-    padding-top: 0; 
     position: relative; 
     margin-bottom: 0px;
 }
 
-@media (max-width: 1440px) {
-    header {
-        min-width: 100%;
-    }
-}
 
 .header-logo {
     position: absolute; /* 绝对定位 */
@@ -100,10 +94,7 @@ nav ul li a.active {
 main {
     padding: 20px;
     position: relative;
-    background: url('path/to/your-background.jpg') no-repeat center center;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
     margin-top: 0;
     justify-content: center; /* Centers content vertically */
     height: 100vh; /* Use the full height of the viewport */
@@ -181,4 +172,116 @@ footer {
     padding: 10px 0;
     width: 100%;
     color: white;
+}
+
+/* Responsive Design */
+
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: 180px; /* Automatic height for small screens */
+    }
+
+    .header-logo {
+        margin: 10px 0;
+        height: 60px;  /* Smaller logo for small screens */
+        max-height: 100%; /* Ensure logo does not exceed header height */
+    }
+
+    nav {
+        position: static;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    nav ul li {
+        flex: 1;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 15px;
+
+    .search-bar {
+        width: 30%; /* Adjusted width for small screens */
+        margin-top: 10px;
+        position: static;
+    }
+
+    .movie-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid columns for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    header {
+        height: 180px;
+        width: 100%;
+    }
+}
+
+    .header-logo {
+        height: 50px; /* Smaller logo for extra small screens */
+        height: 50px;
+        top: 50px;
+    }
+
+    .search-bar {
+        width: 35%; /* Full width for extra small screens */
+        display: flex;
+        align-items: center;
+        top: 40px;
+    }
+
+    .search-bar button {
+        padding: 8px 5px; /* Adjust padding for search button */
+        position: absolute;
+        right: 5px;
+    }
+
+    nav ul {    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    nav ul li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 5px 0;
+        font-size: 12px;
+    }
+
+    .top-movies h1 {
+        font-size: 18px; /* Adjusted font size for extra small screens */
+    }
+
+    .movie .movie-title, .movie p:last-child {
+        font-size: 18px; /* Adjusted font size for extra small screens */
+    }
+
+    .movie-list {
+        grid-template-columns: 1fr 1fr;
+    }
 }

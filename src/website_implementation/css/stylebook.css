@@ -335,3 +335,173 @@ main {
     margin-top: 10px;
     border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+    .logo img {
+        width: 200px; /* Adjust logo size */
+    }
+
+    .search-area {
+        align-items: center;
+        margin-top: 10px;
+        width: 50%;
+    }
+
+    .search-area input[type="text"], .search-area select {
+        width: 50%; /* Full width */
+        margin-top: 5px; /* Add spacing */
+    }
+
+    .search-area button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .page-title {
+        font-size: 30px; /* Adjust font size */
+    }
+
+    .filters {
+        flex-direction: row;
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: flex-start;
+        padding: 10px;
+        position: static; /* Static position */
+        margin-top: 300px; /* Adjust based on header height */
+    }
+
+    .filter {
+        width: 30px;
+        height: 30px;
+        margin: 5px
+    }
+
+    .filter-description {
+        font-size: 12px; 
+    }
+
+    main {
+        margin-top: 0px;
+        padding-top: 0;
+    }
+
+    .date-selector button, .date-selector .next-date {
+        font-size: 14px; 
+        padding: 3px;
+        margin-right: 5px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 100px; /* Adjust logo size */
+        margin-top: 10px;
+    }
+
+    .search-area {
+        display: flex;
+        align-items: center;
+        width: 90%; 
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .search-area input[type="text"], .search-area select {
+        width: calc(100% - 35px); /* 保持相同宽度 */
+        padding: 4px; /* 调整 padding */
+        box-sizing: border-box; /* 包含 padding 在内 */
+    }
+
+    .search-area button {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px; /* 调整按钮宽度 */
+        height: 30px; /* 调整按钮高度 */
+    }
+
+    .page-title {
+        font-size: 40px; 
+        line-height: 1.2; 
+        text-align: center;
+        position: static; 
+        margin-top: 15px; 
+        right: auto;
+        top: auto; 
+        transform: none;
+    }
+
+    .filters {
+        flex-direction: row;
+        flex-wrap: wrap; /* 允许换行 */
+        justify-content: flex-start; /* 调整对齐 */
+        padding: 10px;
+        position: static; /* 静态定位 */
+        margin-top: 300px; /* 根据 header 高度调整 */
+    }
+
+    .filters {
+        flex-direction: row;
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: flex-start; /* Adjust alignment */
+        padding: 10px;
+        position: static; /* Static position */
+        margin-top: 300px; /* Adjust based on header height */
+    }
+
+    .filter {
+        width: 20px; /* Set a fixed width */
+        height: 20px; /* Set a fixed height */
+        margin: 5px; /* Add spacing */
+    }
+
+    .filter-description {
+        font-size: 10px; /* Adjust font size */
+        text-align: center;
+    }
+
+    main {
+        flex-direction: column; /* Stack content vertically */
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 480px) {
+        .content {
+            flex-direction: column;
+            width: 100%;
+            height: auto; 
+        }
+    
+        .movie-poster, .schedule {
+            position: static;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin: 0; 
+            padding: 0;
+        }
+    
+        .movie-poster img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    .date-selector button, .date-selector .next-date {
+        font-size: 12px; /* Adjust font size */
+        padding: 6px; /* Adjust padding */
+    }
+}
