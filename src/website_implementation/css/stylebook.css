@@ -1,10 +1,8 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    
 }
 
 body, html {
@@ -14,7 +12,7 @@ body, html {
 
 header {
     background-color: #000;
-    background-image: url('../media/book\ bg.avif'); /* Path to your image */
+    background-image: url('../media/book bg.avif'); /* Path to your image */
     background-size: cover; /* Ensures the image covers the entire header area without being contained within its dimensions */
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -54,7 +52,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 300px;
     width: 100%; 
     position: relative;
     margin-left: auto; /* Push search area to the right */
@@ -64,26 +61,15 @@ header {
 
 .search-area input[type="text"] {
     padding: 8px;
-    width: 280px;
+    width: 100%; /* Take up full width of .search-area */
     margin-top: 5px;
     flex-grow: 1;
     margin-right: 10px;
     padding-right: 50px;
-    width: 100%; /* Take up full width of .search-area */
-}
-
-.search-area {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 300px;
-    position: relative;
-    padding-left: 5px;
 }
 
 .search-area select {
-    width: 280px;
+    width: 100%;
     padding: 8px;
     margin-top: 15px;
     background: #fff; /* Ensure visibility against dark background */
@@ -114,7 +100,7 @@ header {
     border: none;
     padding: 8px;
     cursor: pointer;
-    width: 280px;
+    width: 100%;
     text-align: center;
     font-weight: bold;
     margin: 5px 0;
@@ -123,9 +109,28 @@ header {
     right: 0; /* Position inside the search bar */
 }
 
+.page-title {
+    font-size: 95px;
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
 .logo h1 {
     margin-left: 20px;
     font-size: 24px;
+}
+
+.my-div {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .page-title {
@@ -136,7 +141,7 @@ header {
     font-size: 60px; /* Larger font size */
     font-weight: bold;
     line-height: 1.5;
-    text-align: right;
+    text-align: center;
     color: #E2B323;
     display: flex;
     flex-direction: column; /* Ensures "Book" and "now" are on separate lines */
@@ -175,9 +180,8 @@ header {
     color: white; /* White text for visibility */
 }
 
-
 .filter-cc {
-    background-image: url('../media/cc\ icon.png');
+    background-image: url('../media/cc icon.png');
     background-size: cover;
 }
 
@@ -187,17 +191,17 @@ header {
 }
 
 .filter-3d {
-    background-image: url('../media/3D\ icon.png');
+    background-image: url('../media/3D icon.png');
     background-size: cover;
 }
 
 .filter-vm {
-    background-image: url('../media/VM\ icon.png');
+    background-image: url('../media/VM icon.png');
     background-size: cover;
 }
 
 .filter-ad {
-    background-image: url('../media/AD\ icon.png');
+    background-image: url('../media/AD icon.png');
     background-size: cover;
 }
 
@@ -218,7 +222,8 @@ main {
     display: flex;
     padding: 20px;
     position: relative;
-    margin-top: 380px;
+    margin-top: 400px; /* Adjust based on header and filters height */
+    flex-wrap: wrap; /* Ensure content doesn't overflow */
 }
 
 .content {
@@ -227,26 +232,28 @@ main {
     overflow: hidden; 
     flex-direction: row;
     width: 100%;  /* Change from auto to 100% */
-    height: 100%; /* Add this line */ 
     min-height: 0; 
 }
 
-.movie-poster {
-    position: sticky;
-    top: -41vh;
-    left: 5px;
+.movie-poster,
+.movie-schedule {
     flex: 1;
-    margin-top: 0;
-    display: flex; /* 设置为 flex 容器 */
-    flex-direction: column; /* 设置 flex 方向为 column */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+}
+
+.movie-poster {
+    flex: 1;
+    margin: 0 10px; /* Ensure there's space between the two columns */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    position: relative;
 }
 
 .movie-poster img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* 确保图片覆盖海报区域 */
+    height: auto;
+    object-fit: cover;
 }
 
 .movie-poster p {
@@ -257,19 +264,6 @@ main {
     font-weight: bold;
 }
 
-
-.movie-schedule {
-    flex-grow: 1; /* Take available space */
-    overflow-y: auto; /* Enable scrolling for schedule */
-    background-color: #fff; /* White background for visibility */
-    padding: 20px; /* Padding around the content */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-.movie-poster {
-    position: relative;
-    z-index: 1; /* Ensure these elements are on top */
-}
 .schedule {
     overflow-y: auto; /* Add this line */
     padding-top: 0; /* Change from the total height of your fixed elements to 0 */
@@ -336,71 +330,170 @@ main {
     border-radius: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+    header {
+        height: auto;
+        padding: 15px;
+    }
+
     .logo img {
-        width: 200px; /* Adjust logo size */
+        width: 150px;
+        margin-top: 5px;
+    }
+
+    .search-area {
+        width: 60%;
+        margin-top: 5px;
+        padding-left: 10px;
+    }
+
+    .search-area input[type="text"], .search-area select {
+        width: 70%;
+        padding: 6px;
+    }
+
+    .search-area button {
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .page-title {
+        font-size: 50px;
+        margin-right: 20px;
+    }
+
+    .filters {
+        margin-top: 300px;
+    }
+
+    .filter {
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+    }
+
+    main {
+        margin-top: 350px;
+        flex-direction: column;
+    }
+
+    .movie-poster,
+    .movie-schedule {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: 210px;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 150px; /* 调整 logo 大小 */
+        margin-top: 10px;
     }
 
     .search-area {
         align-items: center;
         margin-top: 10px;
-        width: 50%;
+        width: 80%;
+        position: relative;
     }
 
-    .search-area input[type="text"], .search-area select {
-        width: 50%; /* Full width */
-        margin-top: 5px; /* Add spacing */
+    .search-area input[type="text"], 
+    .search-area select {
+        width: 100%; /* 全宽 */
+        margin-top: 5px; /* 增加间距 */
     }
 
     .search-area button {
         position: absolute;
-        right: 10px;
-        top: 10px;
+        right: 5px;
+        top: 25%;
+        transform: translateY(-50%);
         width: 45px;
         height: 45px;
     }
 
     .page-title {
-        font-size: 30px; /* Adjust font size */
+        font-size: 30px; /* 调整字体大小 */
+        margin-top: 10px;
+        text-align: center;
     }
 
     .filters {
         flex-direction: row;
-        flex-wrap: wrap; /* Allow wrapping */
-        justify-content: flex-start;
+        flex-wrap: wrap; 
+        justify-content: center; 
         padding: 10px;
-        position: static; /* Static position */
-        margin-top: 300px; /* Adjust based on header height */
+        top: 150px;
+        margin-top: 65px;
     }
 
     .filter {
-        width: 30px;
-        height: 30px;
-        margin: 5px
+        width: 40px; 
+        height: 40px; 
+        margin: 5px;
     }
 
     .filter-description {
-        font-size: 12px; 
+        font-size: 12px;
+        text-align: center;
     }
 
     main {
-        margin-top: 0px;
-        padding-top: 0;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 20px;
     }
 
-    .date-selector button, .date-selector .next-date {
-        font-size: 14px; 
-        padding: 3px;
-        margin-right: 5px; 
+    .content {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: 280px;
+    }
+
+    .movie-poster, 
+    .movie-schedule {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .movie-poster img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .movie-schedule {
+        overflow-y: auto;
+    }
+
+    .date-selector {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .date-selector button,
+    .date-selector .next-date {
+        font-size: 14px;
+        padding: 6px;
+        margin-right: 5px;
     }
 }
-
+   
 
 @media (max-width: 480px) {
     header {
         flex-direction: column;
         align-items: center;
-        height: auto;
         padding: 10px;
     }
 
@@ -412,44 +505,38 @@ main {
     .search-area {
         display: flex;
         align-items: center;
-        width: 90%; 
         margin-top: 10px;
+        width: 70%;
         position: relative;
+        margin-left: 0;
     }
 
-    .search-area input[type="text"], .search-area select {
-        width: calc(100% - 35px); /* 保持相同宽度 */
-        padding: 4px; /* 调整 padding */
-        box-sizing: border-box; /* 包含 padding 在内 */
+    .search-area input[type="text"], 
+    .search-area select {
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 0;
     }
 
-    .search-area button {
+    #search-movies {
+        position: relative;
+        height: 30px;
+        padding-right: 35px; 
+    }
+
+    #search-movies button {
         position: absolute;
-        right: 5px;
+        right: 10px;
         top: 50%;
         transform: translateY(-50%);
-        width: 30px; /* 调整按钮宽度 */
-        height: 30px; /* 调整按钮高度 */
+        width: 30px;
+        height: 30px;
     }
-
+    
     .page-title {
-        font-size: 40px; 
-        line-height: 1.2; 
+        font-size: 38px;
+        margin-right: 0;
         text-align: center;
-        position: static; 
-        margin-top: 15px; 
-        right: auto;
-        top: auto; 
-        transform: none;
-    }
-
-    .filters {
-        flex-direction: row;
-        flex-wrap: wrap; /* 允许换行 */
-        justify-content: flex-start; /* 调整对齐 */
-        padding: 10px;
-        position: static; /* 静态定位 */
-        margin-top: 300px; /* 根据 header 高度调整 */
     }
 
     .filters {
@@ -458,7 +545,7 @@ main {
         justify-content: flex-start; /* Adjust alignment */
         padding: 10px;
         position: static; /* Static position */
-        margin-top: 300px; /* Adjust based on header height */
+        margin-top: 205px; /* Adjust based on header height */
     }
 
     .filter {
@@ -477,31 +564,31 @@ main {
         padding: 10px;
     }
 
-    @media screen and (max-width: 480px) {
-        .content {
-            flex-direction: column;
-            width: 100%;
-            height: auto; 
-        }
-    
-        .movie-poster, .schedule {
-            position: static;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            margin: 0; 
-            padding: 0;
-        }
-    
-        .movie-poster img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
+    .content {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .movie-poster,
+    .movie-schedule {
+        position: static;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0;
+        padding: 0;
+    }
+
+    .movie-poster img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
     .date-selector button, .date-selector .next-date {
-        font-size: 12px; /* Adjust font size */
-        padding: 6px; /* Adjust padding */
+        font-size: 12px;
+        padding: 6px;
     }
 }
