@@ -330,61 +330,6 @@ main {
     border-radius: 5px;
 }
 
-@media (max-width: 1200px) {
-    header {
-        height: auto;
-        padding: 15px;
-    }
-
-    .logo img {
-        width: 150px;
-        margin-top: 5px;
-    }
-
-    .search-area {
-        width: 60%;
-        margin-top: 5px;
-        padding-left: 10px;
-    }
-
-    .search-area input[type="text"], .search-area select {
-        width: 70%;
-        padding: 6px;
-    }
-
-    .search-area button {
-        right: 10px;
-        width: 40px;
-        height: 40px;
-    }
-
-    .page-title {
-        font-size: 50px;
-        margin-right: 20px;
-    }
-
-    .filters {
-        margin-top: 300px;
-    }
-
-    .filter {
-        width: 40px;
-        height: 40px;
-        margin: 10px;
-    }
-
-    main {
-        margin-top: 350px;
-        flex-direction: column;
-    }
-
-    .movie-poster,
-    .movie-schedule {
-        flex: none;
-        width: 100%;
-    }
-}
-
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -578,6 +523,7 @@ main {
         height: auto;
         object-fit: contain;
         margin: 0;
+        margin-top: 10px;
         padding: 0;
     }
 
