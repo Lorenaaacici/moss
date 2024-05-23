@@ -298,7 +298,7 @@ main {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: block;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 使用多列布局 */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
@@ -321,11 +321,10 @@ main {
 
 .movie p {
     margin: 5px 0;
+    background-color: #ffc700;
 }
 
-.movie-title {
-    color:#ffc700;
-}
+
 
 footer {
     text-align: center;
@@ -551,4 +550,9 @@ footer {
         grid-template-columns: 1fr;
         gap: 10px;
     }
+}
+
+#movie-title {
+    color: #ffc700 !important;
+
 }
