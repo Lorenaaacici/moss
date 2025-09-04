@@ -30,18 +30,19 @@ A simple static website showcasing movies, trailers, reviews, and basic account/
 ├── support.html
 ├── account.html
 ├── book.html
-├── css/
-│   ├── style.css
-│   ├── watchwhat.css
-│   ├── community.css
-│   ├── support.css
-│   ├── account.css
-│   └── stylebook.css
-├── js/
-│   ├── script.js
-│   ├── watchwhat.js
-│   └── book.js
-└── media/            # Put images/videos here (gitignored)
+├── assets/
+│   ├── css/
+│   │   ├── style.css
+│   │   ├── watchwhat.css
+│   │   ├── community.css
+│   │   ├── support.css
+│   │   ├── account.css
+│   │   └── stylebook.css
+│   ├── js/
+│   │   ├── script.js
+│   │   ├── watchwhat.js
+│   │   └── book.js
+│   └── images/       # Place images/videos here
 ```
 
 ## Local Preview
@@ -60,8 +61,8 @@ A simple static website showcasing movies, trailers, reviews, and basic account/
 
 ## Assets
 
-- Place image/video assets under `media/` at the project root. This folder is intentionally ignored by git.
-- CSS references assume paths like `url('../media/...')` from files inside `css/` and `media/...` from HTML.
+- Place image/video assets under `assets/images/`.
+- CSS references use `url('../images/...')` from files inside `assets/css/`; HTML uses `assets/images/...`.
 
 ## Notes
 
