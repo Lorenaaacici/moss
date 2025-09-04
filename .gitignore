@@ -1,3 +1,64 @@
-src/website_implementation/media/
-src/website_implementation/commit_history/
+###############################################
+# OS-specific junk files and folders
+###############################################
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+###############################################
+# IDEs and editors
+###############################################
+
+# VS Code / JetBrains / Visual Studio / Eclipse / etc.
+.vscode/
+.vscode
+.idea/
+.vs/
+.fleet/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.cproject
+.settings/
+.metadata
+.history
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# Editor swap/backup files
+*.swp
+*.swo
+*~
+
+###############################################
+# Logs
+###############################################
 *.log
